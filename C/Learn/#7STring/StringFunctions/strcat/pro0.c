@@ -1,0 +1,18 @@
+
+	#include<stdio.h>
+	#include<string.h>
+
+	void main() {
+	
+		char str1[20] = "Sandesh\0";
+		char *str2 = "Marathe";
+
+		puts(str1);
+		puts(str2);
+		
+		strcat(str1,str2);
+		
+		puts(str1);
+		puts(str2);
+	}
+

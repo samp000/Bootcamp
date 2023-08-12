@@ -1,0 +1,55 @@
+
+	#include<iostream>
+	
+	class GParent {
+	
+		public:
+			int a=20;
+
+			GParent(){
+				std::cout << "GParent constructor" << std::endl;
+			}
+
+	};
+
+	class Parent1:public GParent{
+	
+		public:
+			int x = 10;
+			
+			Parent1(){		
+				std::cout << "Parent1 constructor" << std::endl;
+			}
+	};
+
+	class Parent2:public GParent {
+	
+		public:
+			int x = 20;		
+			Parent2(){
+			
+				std::cout << "Parent2 constructor" << std::endl;
+			}	
+	};
+
+	class Child:public Parent1,public Parent2{
+	
+		public:
+
+			Child() {		
+				std::cout << "Child constructor" << std::endl;
+			}
+
+			void getData() {
+				std::cout << Parent2::x   << std::endl;  
+				std::cout << Parent1::a  << std::endl;  
+			}
+	};
+
+	int main() {
+	
+		Child obj;
+		obj.getData();
+
+		return 0;
+	}
